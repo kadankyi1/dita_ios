@@ -23,9 +23,9 @@ struct LoginView: View {
         
     var body: some View {
         VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 5) {
-            Image("CAW-app-Login-2")
-                .resizable()
-                .scaleEffect(x: 1, y: 0.95, anchor: .top)
+            Image("logo")
+                //.resizable()
+                .scaleEffect(x: 0.4, y: 0.4, anchor: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             
             if manager_HttpGetLoginCode.requestMade {
                 if !manager_HttpGetLoginCode.authenticated {

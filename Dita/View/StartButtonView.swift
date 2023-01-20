@@ -19,7 +19,7 @@ struct StartButtonView: View {
         
         Button(action: {
             //appStage = "LoginView"
-            self.currentStage = "SignupView"
+            self.currentStage = "LoginView"
         }) {
             HStack (spacing: 8) {
                 Text("START")
