@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF9577EC297ABCC000FF6D93 /* KeyboardGuardian.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9577EB297ABCC000FF6D93 /* KeyboardGuardian.swift */; };
+		DF9577EE297ABCDB00FF6D93 /* GeometryGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9577ED297ABCDB00FF6D93 /* GeometryGetter.swift */; };
+		DF9577F0297ABCF400FF6D93 /* AdaptsToKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9577EF297ABCF400FF6D93 /* AdaptsToKeyboard.swift */; };
+		DF9577F2297ABD1600FF6D93 /* KeyboardHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9577F1297ABD1600FF6D93 /* KeyboardHost.swift */; };
 		DFA0DA0E297AAEB50021A25A /* StarterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA0DA0D297AAEB50021A25A /* StarterModel.swift */; };
 		DFA0DA10297AAF3B0021A25A /* StartCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA0DA0F297AAF3B0021A25A /* StartCardView.swift */; };
 		DFA0DA12297AAF5E0021A25A /* StartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA0DA11297AAF5E0021A25A /* StartButtonView.swift */; };
@@ -25,6 +29,10 @@
 		493CBB11495DFC54783A0502 /* Pods-Dita.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dita.debug.xcconfig"; path = "Target Support Files/Pods-Dita/Pods-Dita.debug.xcconfig"; sourceTree = "<group>"; };
 		4ED9A9B57DAA64610B33E5FE /* Pods_Dita.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dita.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CD72306A6746717E90F6377 /* Pods-Dita.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dita.release.xcconfig"; path = "Target Support Files/Pods-Dita/Pods-Dita.release.xcconfig"; sourceTree = "<group>"; };
+		DF9577EB297ABCC000FF6D93 /* KeyboardGuardian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardGuardian.swift; sourceTree = "<group>"; };
+		DF9577ED297ABCDB00FF6D93 /* GeometryGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryGetter.swift; sourceTree = "<group>"; };
+		DF9577EF297ABCF400FF6D93 /* AdaptsToKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptsToKeyboard.swift; sourceTree = "<group>"; };
+		DF9577F1297ABD1600FF6D93 /* KeyboardHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHost.swift; sourceTree = "<group>"; };
 		DFA0DA0D297AAEB50021A25A /* StarterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarterModel.swift; sourceTree = "<group>"; };
 		DFA0DA0F297AAF3B0021A25A /* StartCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartCardView.swift; sourceTree = "<group>"; };
 		DFA0DA11297AAF5E0021A25A /* StartButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButtonView.swift; sourceTree = "<group>"; };
@@ -57,7 +65,6 @@
 				493CBB11495DFC54783A0502 /* Pods-Dita.debug.xcconfig */,
 				5CD72306A6746717E90F6377 /* Pods-Dita.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,17 @@
 				4ED9A9B57DAA64610B33E5FE /* Pods_Dita.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DF9577EA297ABCB100FF6D93 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				DF9577EB297ABCC000FF6D93 /* KeyboardGuardian.swift */,
+				DF9577ED297ABCDB00FF6D93 /* GeometryGetter.swift */,
+				DF9577EF297ABCF400FF6D93 /* AdaptsToKeyboard.swift */,
+				DF9577F1297ABD1600FF6D93 /* KeyboardHost.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		DFA0DA0A297AA7830021A25A /* App */ = {
@@ -127,6 +145,7 @@
 		DFE8C539293375C60040D280 /* Dita */ = {
 			isa = PBXGroup;
 			children = (
+				DF9577EA297ABCB100FF6D93 /* Utils */,
 				DFA0DA15297AB0690021A25A /* Data */,
 				DFA0DA0C297AAE9D0021A25A /* Model */,
 				DFA0DA0B297AA79A0021A25A /* View */,
@@ -260,13 +279,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFA0DA17297AB0890021A25A /* StartData.swift in Sources */,
+				DF9577EC297ABCC000FF6D93 /* KeyboardGuardian.swift in Sources */,
+				DF9577F0297ABCF400FF6D93 /* AdaptsToKeyboard.swift in Sources */,
 				DFA0DA1B297AB7310021A25A /* MainView.swift in Sources */,
 				DFE8C53D293375C60040D280 /* ContentView.swift in Sources */,
 				DFA0DA10297AAF3B0021A25A /* StartCardView.swift in Sources */,
 				DFE8C53B293375C60040D280 /* DitaApp.swift in Sources */,
 				DFA0DA14297AB04C0021A25A /* OnboardingView.swift in Sources */,
+				DF9577EE297ABCDB00FF6D93 /* GeometryGetter.swift in Sources */,
 				DFA0DA12297AAF5E0021A25A /* StartButtonView.swift in Sources */,
 				DFA0DA19297AB6810021A25A /* LoginView.swift in Sources */,
+				DF9577F2297ABD1600FF6D93 /* KeyboardHost.swift in Sources */,
 				DFA0DA0E297AAEB50021A25A /* StarterModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

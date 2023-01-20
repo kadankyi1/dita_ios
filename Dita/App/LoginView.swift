@@ -15,8 +15,8 @@ struct LoginView: View {
     @State private var username: String = ""
     @State private var password: String = ""
     //@State private var showLoginButton: Bool = true
-    @ObservedObject var manager = HttpAuth()
-    @ObservedObject var updateContent2 = HttpUpdateContentForLogin()
+    @ObservedObject var manager_HttpGetLoginCode = HttpGetLoginCode()
+    @ObservedObject var manager_HttpVerifyLoginCode = HttpVerifyLoginCode()
     @Binding var currentStage: String
     @State private var networking: Bool = false
         
@@ -24,12 +24,12 @@ struct LoginView: View {
     var body: some View {
         VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 5) {
             Image("CAW-app-Login-2")
-                    .resizable()
+                .resizable()
                 .scaleEffect(x: 1, y: 0.95, anchor: .top)
             
-            if manager.requestMade {
-                if !manager.authenticated {
-                    Text(manager.message)
+            if manager_HttpGetLoginCode.requestMade {
+                if !manager_HttpGetLoginCode.authenticated {
+                    Text(manager_HttpGetLoginCode.message)
                     .font(.headline)
                     .foregroundColor(.red)
                         .onAppear(perform: {
@@ -40,9 +40,9 @@ struct LoginView: View {
                     .font(.headline)
                     .foregroundColor(.green)
                     .onAppear(perform: {
-                        saveTextInStorage("user_accesstoken", manager.accessToken)
-                        saveTextInStorage("user_firstname", manager.userFirstName)
-                        saveTextInStorage("user_lastname", manager.userLastName)
+                        //saveTextInStorage("user_accesstoken", manager.accessToken)
+                        //saveTextInStorage("user_firstname", manager.userFirstName)
+                        //saveTextInStorage("user_lastname", manager.userLastName)
                         self.currentStage = "LoggedInView"
                         print("currentStage: \(self.currentStage)")
                     })
@@ -50,7 +50,7 @@ struct LoginView: View {
             } // MARK - if manager.requestMade
  
             
-            TextField("Phone Number", text: $username).textFieldStyle(RoundedBorderTextFieldStyle.init())
+            TextField("Email", text: $username).textFieldStyle(RoundedBorderTextFieldStyle.init())
                 .scaleEffect(x: 1, y: 1, anchor: .center)
                 .padding(.horizontal, 50)
                 .padding(.bottom, 10)
@@ -64,12 +64,12 @@ struct LoginView: View {
                 .padding(.bottom, 10)
                 .background(GeometryGetter(rect: $kGuardian.rects[1]))
             
-            if manager.showLoginButton {
+            if manager_HttpGetLoginCode.showLoginButton {
                 Button(action: {
                     print("\(self.username) and \(self.password)")
                     if networking == false {
                         networking = true;
-                        manager.checkDetails(user_phone_number: self.username, password: self.password)
+                        manager_HttpGetLoginCode.checkDetails(user_phone_number: self.username, password: self.password)
                     }
                     
                 }) {
@@ -99,10 +99,10 @@ struct LoginView: View {
                      self.currentStage = "SignupView"
                  }
             
-            if updateContent2.showProgress {
+            if manager_HttpVerifyLoginCode.showProgress {
                 ProgressView().onDisappear(perform: {
                     networking = false;
-                    if updateContent2.values_set {
+                    if manager_HttpVerifyLoginCode.values_set {
                          self.currentStage = "LoggedInView"
                     }
                 })
@@ -114,8 +114,8 @@ struct LoginView: View {
                     
                     if networking == false {
                         networking = true;
-                        updateContent2.update_content();
-                        if updateContent2.values_set {
+                        manager_HttpVerifyLoginCode.update_content();
+                        if manager_HttpVerifyLoginCode.values_set {
                              self.currentStage = "LoggedInView"
                         }
                     }
@@ -135,7 +135,23 @@ struct LoginView_Previews: PreviewProvider {
 }
 
 
-class HttpAuth: ObservableObject {
+func saveTextInStorage(_ index: String, _ value: String) {
+    UserDefaults.standard.set(value, forKey:index)
+}
+
+func saveIntegerInStorage(_ index: String, _ value: Int) {
+    UserDefaults.standard.set(value, forKey:index)
+}
+
+func deleteUserData(){
+    let domain = Bundle.main.bundleIdentifier!
+    UserDefaults.standard.removePersistentDomain(forName: domain)
+    UserDefaults.standard.synchronize()
+    print(Array(UserDefaults.standard.dictionaryRepresentation().keys).count)
+}
+
+
+class HttpGetLoginCode: ObservableObject {
 
     @Published var authenticated = false
     @Published var requestMade = false
@@ -189,122 +205,6 @@ class HttpAuth: ObservableObject {
                                 print("surname: \(self.userLastName)")
                               }
                             
-                            if let notice_image_one = json["data"]["data"][0]["notice_image"].string {
-                                //Now you got your value
-                                saveTextInStorage("notice_image_one", notice_image_one)
-                                print("note_image_one: \(notice_image_one)")
-                              }
-                            
-                            if let notice_image_two = json["data"]["data"][1]["notice_image"].string {
-                                //Now you got your value
-                                saveTextInStorage("notice_image_two", notice_image_two)
-                                print("notice_image_two: \(notice_image_two)")
-                              }
-                            
-                            if let audio_id = json["audios"]["data"][0]["audio_id"].int {
-                                //Now you got your value
-                                saveTextInStorage("latest_audio_id", String(audio_id))
-                                print("audio_id: \(audio_id)")
-                                
-                                if let audio_name = json["audios"]["data"][0]["audio_name"].string {
-                                    //Now you got your value
-                                    saveTextInStorage("latest_audio_name", audio_name)
-                                    print("latest_audio_name: \(audio_name)")
-                                    if let audio_description = json["audios"]["data"][0]["audio_description"].string {
-                                        //Now you got your value
-                                        saveTextInStorage("latest_audio_description", audio_description)
-                                        print("latest_audio_description: \(audio_description)")
-                                        
-                                        if let audio_image = json["audios"]["data"][0]["audio_image"].string {
-                                            //Now you got your value
-                                            saveTextInStorage("latest_audio_image", audio_image)
-                                            print("latest_audio_image: \(audio_image)")
-                                            if let audio_mp3 = json["audios"]["data"][0]["audio_mp3"].string {
-                                                //Now you got your value
-                                                saveTextInStorage("latest_audio_mp3", audio_mp3)
-                                                print("latest_audio_mp3: \(audio_mp3)")
-                                                
-                                                if let created_at = json["audios"]["data"][0]["created_at"].string {
-                                                    //Now you got your value
-                                                    saveTextInStorage("latest_audio_date", created_at)
-                                                    print("latest_audio_date: \(created_at)")
-                                                  }
-                                              }
-                                          } //AUDIO IMAGE
-                                      }
-                                  } // START FOR AUDIO NAME
-                              } // END FOR AUDIO ID
-                            
-                            
-                            if let video_id = json["videos"]["data"][0]["video_id"].int {
-                                //Now you got your value
-                                saveTextInStorage("latest_video1_id", String(video_id))
-                                print("latest_video1_id: \(video_id)")
-                                
-                                if let video_name = json["videos"]["data"][0]["video_name"].string {
-                                    //Now you got your value
-                                    saveTextInStorage("latest_video1_name", video_name)
-                                    print("latest_video1_name: \(video_name)")
-                                    
-                                    if let video_description = json["videos"]["data"][0]["video_description"].string {
-                                        //Now you got your value
-                                        saveTextInStorage("latest_video1_description", video_description)
-                                        print("latest_video1_description: \(video_description)")
-                                        
-                                        if let video_image = json["videos"]["data"][0]["video_image"].string {
-                                            //Now you got your value
-                                            saveTextInStorage("latest_video1_image", video_image)
-                                            print("latest_video1_image: \(video_image)")
-                                            if let video_mp4 = json["videos"]["data"][0]["video_mp4"].string {
-                                                //Now you got your value
-                                                saveTextInStorage("latest_video1_mp4", video_mp4)
-                                                print("latest_video1_mp4: \(video_mp4)")
-                                                
-                                                if let created_at = json["videos"]["data"][0]["created_at"].string {
-                                                    //Now you got your value
-                                                    saveTextInStorage("latest_video1_date", created_at)
-                                                    print("latest_video1_date: \(created_at)")
-                                                  }
-                                              }
-                                          } //VIDEO IMAGE
-                                      }
-                                  } // START FOR VIDEO NAME
-                              } // END FOR VIDEO ID
-                            
-                            if let video_id = json["latest_audios"]["data"][0]["audio_id"].int {
-                                //Now you got your value
-                                saveTextInStorage("latest_video2_id", String(video_id))
-                                print("latest_video2_id: \(video_id)")
-                                
-                                if let video_name = json["latest_audios"]["data"][0]["audio_name"].string {
-                                    //Now you got your value
-                                    saveTextInStorage("latest_video2_name", video_name)
-                                    print("333 latest_video2_name: \(video_name)")
-                                    
-                                    if let video_description = json["latest_audios"]["data"][0]["audio_description"].string {
-                                        //Now you got your value
-                                        saveTextInStorage("latest_video2_description", video_description)
-                                        print("latest_video2_description: \(video_description)")
-                                        
-                                        if let video_image = json["latest_audios"]["data"][0]["audio_image"].string {
-                                            //Now you got your value
-                                            saveTextInStorage("latest_video2_image", video_image)
-                                            print("latest_video2_image: \(video_image)")
-                                            if let video_mp4 = json["latest_audios"]["data"][0]["audio_mp3"].string {
-                                                //Now you got your value
-                                                saveTextInStorage("latest_video2_mp4", video_mp4)
-                                                print("latest_video2_mp4: \(video_mp4)")
-                                                
-                                                if let created_at = json["latest_audios"]["data"][0]["created_at"].string {
-                                                    //Now you got your value
-                                                    saveTextInStorage("latest_video2_date", created_at)
-                                                    print("latest_video2_date: \(created_at)")
-                                                  }
-                                              }
-                                          } //VIDEO IMAGE
-                                      }
-                                  } // START FOR VIDEO NAME
-                              } // END FOR VIDEO ID
                             
                             
                         } else {
@@ -345,7 +245,7 @@ class HttpAuth: ObservableObject {
 }
 
 
-class HttpUpdateContentForLogin: ObservableObject {
+class HttpVerifyLoginCode: ObservableObject {
 
     @Published var requestMade = false
     @Published var values_set = false
@@ -379,12 +279,12 @@ class HttpUpdateContentForLogin: ObservableObject {
                             
                             if let thisaccesstoken = json["access_token"].string {
                                 //Now you got your value
-                                saveTextInStorage("user_accesstoken", thisaccesstoken)
+                                //saveTextInStorage("user_accesstoken", thisaccesstoken)
                                 print("GUEST access_token: \(thisaccesstoken)")
                               }
                             if let firstname = json["user"]["user_firstname"].string {
                                 //Now you got your value
-                                saveTextInStorage("user_firstname", firstname)
+                                //saveTextInStorage("user_firstname", firstname)
                                 print("GUEST userFirstName: \(firstname)")
                               }
                             if let surname = json["user"]["user_surname"].string {
@@ -392,125 +292,6 @@ class HttpUpdateContentForLogin: ObservableObject {
                                 saveTextInStorage("user_lastname", surname)
                                 print("GUEST surname: \(surname)")
                               }
-                            
-                            if let notice_image_one = json["data"]["data"][0]["notice_image"].string {
-                                //Now you got your value
-                                saveTextInStorage("notice_image_one", notice_image_one)
-                                print("note_image_one: \(notice_image_one)")
-                              }
-                            
-                            if let notice_image_two = json["data"]["data"][1]["notice_image"].string {
-                                //Now you got your value
-                                saveTextInStorage("notice_image_two", notice_image_two)
-                                print("notice_image_two: \(notice_image_two)")
-                              }
-                            
-                            if let audio_id = json["audios"]["data"][0]["audio_id"].int {
-                                //Now you got your value
-                                saveTextInStorage("latest_audio_id", String(audio_id))
-                                print("audio_id: \(audio_id)")
-                                
-                                if let audio_name = json["audios"]["data"][0]["audio_name"].string {
-                                    //Now you got your value
-                                    saveTextInStorage("latest_audio_name", audio_name)
-                                    print("latest_audio_name: \(audio_name)")
-                                    if let audio_description = json["audios"]["data"][0]["audio_description"].string {
-                                        //Now you got your value
-                                        saveTextInStorage("latest_audio_description", audio_description)
-                                        print("latest_audio_description: \(audio_description)")
-                                        
-                                        if let audio_image = json["audios"]["data"][0]["audio_image"].string {
-                                            //Now you got your value
-                                            saveTextInStorage("latest_audio_image", audio_image)
-                                            print("latest_audio_image: \(audio_image)")
-                                            if let audio_mp3 = json["audios"]["data"][0]["audio_mp3"].string {
-                                                //Now you got your value
-                                                saveTextInStorage("latest_audio_mp3", audio_mp3)
-                                                print("latest_audio_mp3: \(audio_mp3)")
-                                                
-                                                if let created_at = json["audios"]["data"][0]["created_at"].string {
-                                                    //Now you got your value
-                                                    saveTextInStorage("latest_audio_date", created_at)
-                                                    print("latest_audio_date: \(created_at)")
-                                                  }
-                                              }
-                                          } //AUDIO IMAGE
-                                      }
-                                  } // START FOR AUDIO NAME
-                              } // END FOR AUDIO ID
-                            
-                            
-                            if let video_id = json["videos"]["data"][0]["video_id"].int {
-                                //Now you got your value
-                                saveTextInStorage("latest_video1_id", String(video_id))
-                                print("latest_video1_id: \(video_id)")
-                                
-                                if let video_name = json["videos"]["data"][0]["video_name"].string {
-                                    //Now you got your value
-                                    saveTextInStorage("latest_video1_name", video_name)
-                                    print("latest_video1_name: \(video_name)")
-                                    
-                                    if let video_description = json["videos"]["data"][0]["video_description"].string {
-                                        //Now you got your value
-                                        saveTextInStorage("latest_video1_description", video_description)
-                                        print("latest_video1_description: \(video_description)")
-                                        
-                                        if let video_image = json["videos"]["data"][0]["video_image"].string {
-                                            //Now you got your value
-                                            saveTextInStorage("latest_video1_image", video_image)
-                                            print("latest_video1_image: \(video_image)")
-                                            if let video_mp4 = json["videos"]["data"][0]["video_mp4"].string {
-                                                //Now you got your value
-                                                saveTextInStorage("latest_video1_mp4", video_mp4)
-                                                print("latest_video1_mp4: \(video_mp4)")
-                                                
-                                                if let created_at = json["videos"]["data"][0]["created_at"].string {
-                                                    //Now you got your value
-                                                    saveTextInStorage("latest_video1_date", created_at)
-                                                    print("latest_video1_date: \(created_at)")
-                                                  }
-                                              }
-                                          } //VIDEO IMAGE
-                                      }
-                                  } // START FOR VIDEO NAME
-                              } // END FOR VIDEO ID
-                            
-                            if let video_id = json["latest_audios"]["data"][0]["audio_id"].int {
-                                //Now you got your value
-                                saveTextInStorage("latest_video2_id", String(video_id))
-                                print("latest_video2_id: \(video_id)")
-                                
-                                if let video_name = json["latest_audios"]["data"][0]["audio_name"].string {
-                                    //Now you got your value
-                                    saveTextInStorage("latest_video2_name", video_name)
-                                    print("444 latest_video2_name: \(video_name)")
-                                    
-                                    if let video_description = json["latest_audios"]["data"][0]["audio_description"].string {
-                                        //Now you got your value
-                                        saveTextInStorage("latest_video2_description", video_description)
-                                        print("latest_video2_description: \(video_description)")
-                                        
-                                        if let video_image = json["latest_audios"]["data"][0]["audio_image"].string {
-                                            //Now you got your value
-                                            saveTextInStorage("latest_video2_image", video_image)
-                                            print("latest_video2_image: \(video_image)")
-                                            if let video_mp4 = json["latest_audios"]["data"][0]["audio_mp3"].string {
-                                                //Now you got your value
-                                                saveTextInStorage("latest_video2_mp4", video_mp4)
-                                                print("latest_video2_mp4: \(video_mp4)")
-                                                
-                                                if let created_at = json["latest_audios"]["data"][0]["created_at"].string {
-                                                    //Now you got your value
-                                                    saveTextInStorage("latest_video2_date", created_at)
-                                                    print("latest_video2_date: \(created_at)")
-                                                    self.values_set = true
-                                                    self.showProgress = false
-                                                  }
-                                              }
-                                          } //VIDEO IMAGE
-                                      }
-                                  } // START FOR VIDEO NAME
-                              } // END FOR VIDEO ID
                             
                         }
                     }
