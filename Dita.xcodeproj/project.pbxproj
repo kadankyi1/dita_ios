@@ -7,13 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DFA0DA0E297AAEB50021A25A /* StarterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA0DA0D297AAEB50021A25A /* StarterModel.swift */; };
+		DFA0DA10297AAF3B0021A25A /* StartCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA0DA0F297AAF3B0021A25A /* StartCardView.swift */; };
+		DFA0DA12297AAF5E0021A25A /* StartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA0DA11297AAF5E0021A25A /* StartButtonView.swift */; };
+		DFA0DA14297AB04C0021A25A /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA0DA13297AB04C0021A25A /* OnboardingView.swift */; };
+		DFA0DA17297AB0890021A25A /* StartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA0DA16297AB0890021A25A /* StartData.swift */; };
+		DFA0DA19297AB6810021A25A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA0DA18297AB6810021A25A /* LoginView.swift */; };
+		DFA0DA1B297AB7310021A25A /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA0DA1A297AB7310021A25A /* MainView.swift */; };
 		DFE8C53B293375C60040D280 /* DitaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE8C53A293375C60040D280 /* DitaApp.swift */; };
 		DFE8C53D293375C60040D280 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE8C53C293375C60040D280 /* ContentView.swift */; };
 		DFE8C53F293375CA0040D280 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFE8C53E293375CA0040D280 /* Assets.xcassets */; };
 		DFE8C542293375CA0040D280 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFE8C541293375CA0040D280 /* Preview Assets.xcassets */; };
+		FEAECC49E6225DC59F98850F /* Pods_Dita.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ED9A9B57DAA64610B33E5FE /* Pods_Dita.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		493CBB11495DFC54783A0502 /* Pods-Dita.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dita.debug.xcconfig"; path = "Target Support Files/Pods-Dita/Pods-Dita.debug.xcconfig"; sourceTree = "<group>"; };
+		4ED9A9B57DAA64610B33E5FE /* Pods_Dita.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dita.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CD72306A6746717E90F6377 /* Pods-Dita.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dita.release.xcconfig"; path = "Target Support Files/Pods-Dita/Pods-Dita.release.xcconfig"; sourceTree = "<group>"; };
+		DFA0DA0D297AAEB50021A25A /* StarterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarterModel.swift; sourceTree = "<group>"; };
+		DFA0DA0F297AAF3B0021A25A /* StartCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartCardView.swift; sourceTree = "<group>"; };
+		DFA0DA11297AAF5E0021A25A /* StartButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButtonView.swift; sourceTree = "<group>"; };
+		DFA0DA13297AB04C0021A25A /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		DFA0DA16297AB0890021A25A /* StartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartData.swift; sourceTree = "<group>"; };
+		DFA0DA18297AB6810021A25A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		DFA0DA1A297AB7310021A25A /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		DFE8C537293375C60040D280 /* Dita.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dita.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFE8C53A293375C60040D280 /* DitaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DitaApp.swift; sourceTree = "<group>"; };
 		DFE8C53C293375C60040D280 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -26,17 +44,75 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEAECC49E6225DC59F98850F /* Pods_Dita.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E85EDC9BABF49EF94F5FDBB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				493CBB11495DFC54783A0502 /* Pods-Dita.debug.xcconfig */,
+				5CD72306A6746717E90F6377 /* Pods-Dita.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C17F008D55E7AB87037889C7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4ED9A9B57DAA64610B33E5FE /* Pods_Dita.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DFA0DA0A297AA7830021A25A /* App */ = {
+			isa = PBXGroup;
+			children = (
+				DFE8C53A293375C60040D280 /* DitaApp.swift */,
+				DFE8C53C293375C60040D280 /* ContentView.swift */,
+				DFA0DA13297AB04C0021A25A /* OnboardingView.swift */,
+				DFA0DA18297AB6810021A25A /* LoginView.swift */,
+				DFA0DA1A297AB7310021A25A /* MainView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		DFA0DA0B297AA79A0021A25A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DFA0DA0F297AAF3B0021A25A /* StartCardView.swift */,
+				DFA0DA11297AAF5E0021A25A /* StartButtonView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DFA0DA0C297AAE9D0021A25A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DFA0DA0D297AAEB50021A25A /* StarterModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DFA0DA15297AB0690021A25A /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				DFA0DA16297AB0890021A25A /* StartData.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		DFE8C52E293375C60040D280 = {
 			isa = PBXGroup;
 			children = (
 				DFE8C539293375C60040D280 /* Dita */,
 				DFE8C538293375C60040D280 /* Products */,
+				5E85EDC9BABF49EF94F5FDBB /* Pods */,
+				C17F008D55E7AB87037889C7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,8 +127,10 @@
 		DFE8C539293375C60040D280 /* Dita */ = {
 			isa = PBXGroup;
 			children = (
-				DFE8C53A293375C60040D280 /* DitaApp.swift */,
-				DFE8C53C293375C60040D280 /* ContentView.swift */,
+				DFA0DA15297AB0690021A25A /* Data */,
+				DFA0DA0C297AAE9D0021A25A /* Model */,
+				DFA0DA0B297AA79A0021A25A /* View */,
+				DFA0DA0A297AA7830021A25A /* App */,
 				DFE8C53E293375CA0040D280 /* Assets.xcassets */,
 				DFE8C540293375CA0040D280 /* Preview Content */,
 			);
@@ -74,9 +152,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DFE8C545293375CA0040D280 /* Build configuration list for PBXNativeTarget "Dita" */;
 			buildPhases = (
+				75D4BD3FD6C4A6248A11E315 /* [CP] Check Pods Manifest.lock */,
 				DFE8C533293375C60040D280 /* Sources */,
 				DFE8C534293375C60040D280 /* Frameworks */,
 				DFE8C535293375C60040D280 /* Resources */,
+				EE8520CE15EE3E53A8C340F9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,13 +212,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		75D4BD3FD6C4A6248A11E315 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Dita-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE8520CE15EE3E53A8C340F9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Dita/Pods-Dita-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Dita/Pods-Dita-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Dita/Pods-Dita-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DFE8C533293375C60040D280 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFA0DA17297AB0890021A25A /* StartData.swift in Sources */,
+				DFA0DA1B297AB7310021A25A /* MainView.swift in Sources */,
 				DFE8C53D293375C60040D280 /* ContentView.swift in Sources */,
+				DFA0DA10297AAF3B0021A25A /* StartCardView.swift in Sources */,
 				DFE8C53B293375C60040D280 /* DitaApp.swift in Sources */,
+				DFA0DA14297AB04C0021A25A /* OnboardingView.swift in Sources */,
+				DFA0DA12297AAF5E0021A25A /* StartButtonView.swift in Sources */,
+				DFA0DA19297AB6810021A25A /* LoginView.swift in Sources */,
+				DFA0DA0E297AAEB50021A25A /* StarterModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +390,7 @@
 		};
 		DFE8C546293375CA0040D280 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 493CBB11495DFC54783A0502 /* Pods-Dita.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -291,6 +421,7 @@
 		};
 		DFE8C547293375CA0040D280 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5CD72306A6746717E90F6377 /* Pods-Dita.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
