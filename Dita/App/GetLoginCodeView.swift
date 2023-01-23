@@ -1,24 +1,20 @@
 //
-//  LoginView.swift
+//  GetLoginCodeView.swift
 //  Dita
 //
-//  Created by Dankyi Anno Kwaku on 1/20/23.
+//  Created by Dankyi Anno Kwaku on 1/22/23.
 //
 
 import SwiftUI
 import SwiftyJSON
 
-struct LoginView: View {
+struct GetLoginCodeView: View {
     @ObservedObject private var kGuardian = KeyboardGuardian(textFieldCount: 3)
     @State private var name = Array<String>.init(repeating: "", count: 3)
-    
     @State private var email_address: String = ""
-    @State private var passcode: String = ""
     //@State private var showLoginButton: Bool = true
     @ObservedObject var manager_HttpGetLoginCode = HttpGetLoginCode()
-    @ObservedObject var manager_HttpVerifyLoginCode = HttpVerifyLoginCode()
     @Binding var currentStage: String
-    @State private var networking: Bool = false
         
         
     var body: some View {
@@ -27,14 +23,14 @@ struct LoginView: View {
                 //.resizable()
                 .scaleEffect(x: 0.4, y: 0.4, anchor: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             
-            if (manager_HttpVerifyLoginCode.requestMade == "0") {
-                Text("A code has been sent to your inbox/spam. Enter the code to login")
+            if (manager_HttpGetLoginCode.requestMade == "0") {
+                Text("Enter your email address to receive a login code")
                 .padding(.horizontal, 10)
                 .font(.headline)
                 .multilineTextAlignment(.center)
                 .foregroundColor(Color("ColorLightGrayAndWhite"))
                 
-                TextField("Login Code", text: $passcode).textFieldStyle(RoundedBorderTextFieldStyle.init())
+                TextField("Email", text: $email_address).textFieldStyle(RoundedBorderTextFieldStyle.init())
                     .scaleEffect(x: 1, y: 1, anchor: .center)
                     .padding(.horizontal, 50)
                     .padding(.bottom, 10)
@@ -43,10 +39,10 @@ struct LoginView: View {
                 
                     Button(action: {
                         print("\(self.email_address)")
-                        manager_HttpVerifyLoginCode.verifyLoginCode(user_email: self.email_address, user_passcode: self.passcode)
+                        manager_HttpGetLoginCode.getLoginCode(user_email: self.email_address)
                     }) {
                         HStack (spacing: 8) {
-                            Text("Login")
+                            Text("Get Code")
                                 .foregroundColor(Color("ColorLightGrayAndWhite"))
                         }
                         .padding(.horizontal, 16)
@@ -57,48 +53,38 @@ struct LoginView: View {
                     .background(Color("ColorDarkBlueAndDarkBlue"))
                     .cornerRadius(20)
                     .padding(.bottom, 50)
-                
-                
-                    Text("Did not get code")
-                        .foregroundColor(Color("ColorDarkBlueAndDarkBlue"))
-                        .padding(.bottom, 10)
-                        .onTapGesture {
-                            self.currentStage = "GetLoginCodeView"
-                        }
-            }
-            else if (manager_HttpVerifyLoginCode.requestMade == "1") {
+            } // MARK: - if manager_HttpGetLoginCode.requestMade
+            
+            else if (manager_HttpGetLoginCode.requestMade == "1") {
                     ProgressView()
             }
             
-            else if (manager_HttpVerifyLoginCode.requestMade == "2") {
+            else if (manager_HttpGetLoginCode.requestMade == "2") {
                 ProgressView()
                     .onAppear(perform: {
-                        self.currentStage = "MainView"
+                        self.currentStage = "LoginView"
                     })
             }
-           
+            
             
         } // MARK - VSTACK
     }
 }
 
-
-
-struct LoginView_Previews: PreviewProvider {
+struct GetLoginCodeView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView(currentStage: .constant("LoginView"))
+        GetLoginCodeView(currentStage: .constant("GetLoginCodeView"))
     }
 }
 
-
-class HttpVerifyLoginCode: ObservableObject {
+class HttpGetLoginCode: ObservableObject {
     @Published var requestMade = "0" // no change
     
-    func verifyLoginCode(user_email: String, user_passcode: String) {
+    func getLoginCode(user_email: String) {
         requestMade = "1" // started
-        guard let url = URL(string: DitaApp.app_domain + "/api/v1/user/verify-login-code") else { return }
+        guard let url = URL(string: DitaApp.app_domain + "/api/v1/user/send-login-code") else { return }
 
-        let body: [String: String] = ["user_email": getSavedString("user_email"), "user_passcode": user_passcode, "app_type": "ios", "app_version_code": DitaApp.app_version]
+        let body: [String: String] = ["user_email": user_email, "app_type": "ios", "app_version_code": DitaApp.app_version]
         print(body)
 
         let finalBody = try! JSONSerialization.data(withJSONObject: body)
@@ -114,32 +100,26 @@ class HttpVerifyLoginCode: ObservableObject {
             do {
                 let json = try JSON(data: data)
                 if let status = json["status"].string {
-                  //Now you got your value
-                    print("UPDATED CONTENT")
-                    print(status)
-                    
+                    print(status)// success
                     DispatchQueue.main.async {
-                        print(status)
                         if status == "success" {
-                            self.requestMade = "2" // started
-                            if let thisaccesstoken = json["access_token"].string {
-                                //Now you got your value
-                                saveTextInStorage("user_accesstoken", thisaccesstoken)
-                                //print("GUEST access_token: \(thisaccesstoken)")
-                              }
+                            self.requestMade = "2" // success
+                            //LoginView.currentStage = "MainView"
+                            //manager_HttpGetLoginCode.requestMade = "4"
                             
+                            saveTextInStorage("user_email", user_email)
                         } else {
                             self.requestMade = "3" // fail
                         }
                     }
                 }
             } catch  let error as NSError {
-                
-                    DispatchQueue.main.async {
-                        self.requestMade = "3" // fail
-                    }
+                DispatchQueue.main.async {
+                    self.requestMade = "3" // fail
+                }
             }
             
         }.resume()
     }
 }
+

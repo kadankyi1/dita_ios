@@ -9,6 +9,12 @@ import SwiftUI
 
 @main
 struct DitaApp: App {
+    //@UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    static let app_version : String = "1"
+    
+    // LIVE OR TEST ENVIRONMENT
+    static let app_domain : String = "https://dita.fishpott.com"
+    //static let app_domain : String = "https://test.fishpott.com"
     
     @State var currentStage = getUserFirstOpenView("user_accesstoken")
         
@@ -18,7 +24,9 @@ struct DitaApp: App {
             
             if(self.currentStage == "OnboardingView" || self.currentStage == ""){
                 OnboardingView(currentStage: $currentStage)
-            } else if(self.currentStage == "LoginView"){
+            } else if(self.currentStage == "GetLoginCodeView"){
+                GetLoginCodeView(currentStage: $currentStage)
+            }  else if(self.currentStage == "LoginView"){
                 LoginView(currentStage: $currentStage)
             }  else {
                 MainView(currentStage: $currentStage)
@@ -38,18 +46,12 @@ struct DitaApp: App {
 
     func getUserFirstOpenView(_ index: String) -> String {
         var str = UserDefaults.standard.string(forKey: index) ?? ""
-        var user_firstname = UserDefaults.standard.string(forKey: "user_firstname") ?? ""
-        var user_lastname = UserDefaults.standard.string(forKey: "user_lastname") ?? ""
-        var latest_audio_image = UserDefaults.standard.string(forKey: "latest_audio_image") ?? ""
-        var latest_video1_image = UserDefaults.standard.string(forKey: "latest_video1_image") ?? ""
-        var latest_video2_image = UserDefaults.standard.string(forKey: "latest_video2_image") ?? ""
+        var user_email = UserDefaults.standard.string(forKey: "user_email") ?? ""
+        var user_accesstoken = UserDefaults.standard.string(forKey: "user_accesstoken") ?? ""
+        
         //print("getSavedString: \(str)")
-        if(str != "" && latest_audio_image != "" && latest_video1_image != "" && latest_video2_image != ""){
-            if(user_firstname == "Guest" && user_lastname == "User"){
-                str = "SignupView"
-            } else {
-                str = "MainView"
-            }
+        if(str != "" && user_email != "" && user_accesstoken != ""){
+            str = "MainView"
         } else {
             str = "OnboardingView"
         }
@@ -58,3 +60,18 @@ struct DitaApp: App {
         //return str == nil ? "" : str!
     }
 
+
+func saveTextInStorage(_ index: String, _ value: String) {
+    UserDefaults.standard.set(value, forKey:index)
+}
+
+func saveIntegerInStorage(_ index: String, _ value: Int) {
+    UserDefaults.standard.set(value, forKey:index)
+}
+
+func deleteUserData(){
+    let domain = Bundle.main.bundleIdentifier!
+    UserDefaults.standard.removePersistentDomain(forName: domain)
+    UserDefaults.standard.synchronize()
+    print(Array(UserDefaults.standard.dictionaryRepresentation().keys).count)
+}
