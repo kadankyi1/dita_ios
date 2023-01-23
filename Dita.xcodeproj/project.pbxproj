@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		DF911772297E73B200619900 /* GetLoginCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF911771297E73B200619900 /* GetLoginCodeView.swift */; };
+		DF911774297E80C100619900 /* EBooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF911773297E80C100619900 /* EBooksView.swift */; };
+		DF911778297E80E400619900 /* ContactDitaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF911777297E80E400619900 /* ContactDitaView.swift */; };
+		DF91177A297E80F200619900 /* LastReadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF911779297E80F200619900 /* LastReadView.swift */; };
+		DF91177C297E812200619900 /* SummariesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF91177B297E812200619900 /* SummariesView.swift */; };
 		DF9577EC297ABCC000FF6D93 /* KeyboardGuardian.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9577EB297ABCC000FF6D93 /* KeyboardGuardian.swift */; };
 		DF9577EE297ABCDB00FF6D93 /* GeometryGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9577ED297ABCDB00FF6D93 /* GeometryGetter.swift */; };
 		DF9577F0297ABCF400FF6D93 /* AdaptsToKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9577EF297ABCF400FF6D93 /* AdaptsToKeyboard.swift */; };
@@ -31,6 +35,10 @@
 		4ED9A9B57DAA64610B33E5FE /* Pods_Dita.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dita.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CD72306A6746717E90F6377 /* Pods-Dita.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dita.release.xcconfig"; path = "Target Support Files/Pods-Dita/Pods-Dita.release.xcconfig"; sourceTree = "<group>"; };
 		DF911771297E73B200619900 /* GetLoginCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLoginCodeView.swift; sourceTree = "<group>"; };
+		DF911773297E80C100619900 /* EBooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EBooksView.swift; sourceTree = "<group>"; };
+		DF911777297E80E400619900 /* ContactDitaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDitaView.swift; sourceTree = "<group>"; };
+		DF911779297E80F200619900 /* LastReadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastReadView.swift; sourceTree = "<group>"; };
+		DF91177B297E812200619900 /* SummariesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummariesView.swift; sourceTree = "<group>"; };
 		DF9577EB297ABCC000FF6D93 /* KeyboardGuardian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardGuardian.swift; sourceTree = "<group>"; };
 		DF9577ED297ABCDB00FF6D93 /* GeometryGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryGetter.swift; sourceTree = "<group>"; };
 		DF9577EF297ABCF400FF6D93 /* AdaptsToKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptsToKeyboard.swift; sourceTree = "<group>"; };
@@ -98,6 +106,10 @@
 				DFA0DA18297AB6810021A25A /* LoginView.swift */,
 				DFA0DA1A297AB7310021A25A /* MainView.swift */,
 				DF911771297E73B200619900 /* GetLoginCodeView.swift */,
+				DF911773297E80C100619900 /* EBooksView.swift */,
+				DF911777297E80E400619900 /* ContactDitaView.swift */,
+				DF911779297E80F200619900 /* LastReadView.swift */,
+				DF91177B297E812200619900 /* SummariesView.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -281,8 +293,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF911774297E80C100619900 /* EBooksView.swift in Sources */,
 				DF911772297E73B200619900 /* GetLoginCodeView.swift in Sources */,
 				DFA0DA17297AB0890021A25A /* StartData.swift in Sources */,
+				DF91177C297E812200619900 /* SummariesView.swift in Sources */,
 				DF9577EC297ABCC000FF6D93 /* KeyboardGuardian.swift in Sources */,
 				DF9577F0297ABCF400FF6D93 /* AdaptsToKeyboard.swift in Sources */,
 				DFA0DA1B297AB7310021A25A /* MainView.swift in Sources */,
@@ -290,8 +304,10 @@
 				DFA0DA10297AAF3B0021A25A /* StartCardView.swift in Sources */,
 				DFE8C53B293375C60040D280 /* DitaApp.swift in Sources */,
 				DFA0DA14297AB04C0021A25A /* OnboardingView.swift in Sources */,
+				DF911778297E80E400619900 /* ContactDitaView.swift in Sources */,
 				DF9577EE297ABCDB00FF6D93 /* GeometryGetter.swift in Sources */,
 				DFA0DA12297AAF5E0021A25A /* StartButtonView.swift in Sources */,
+				DF91177A297E80F200619900 /* LastReadView.swift in Sources */,
 				DFA0DA19297AB6810021A25A /* LoginView.swift in Sources */,
 				DF9577F2297ABD1600FF6D93 /* KeyboardHost.swift in Sources */,
 				DFA0DA0E297AAEB50021A25A /* StarterModel.swift in Sources */,
