@@ -12,6 +12,6 @@ import SwiftUI
 let startData: [StarterModel] = [
     StarterModel(
         title: "Read a book:)",
-        image: "StartPage1BookImage"
+        image: "startpagebookimage"
     )
 ]

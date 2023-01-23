@@ -39,8 +39,8 @@ struct MainView: View {
     @State var shouldShowModal = false
     @State var now = Date()
     
-    let tabBarImageNames = ["suggestions", "finder", "investments", "persona", "profile" ]
-    let tabBarMenuNames = ["Suggestions", "Finder", "Investments", "Persona", "Profile"]
+    let tabBarImageNames = ["lastreadbook", "ebooks", "summaries", "support"]
+    let tabBarMenuNames = ["Continue", "EBooks", "Summaries", "Support"]
     
     var body: some View {
         
