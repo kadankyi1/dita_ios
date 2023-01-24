@@ -52,7 +52,7 @@ struct MainView: View {
          */
         VStack(spacing: 0) {
             
-        Text("FishPott ")
+        Text("Dita ")
             .foregroundColor(Color(.black))
             .font(.custom("SweetSensationsPersonalUse", size: 30))
             .padding(.top, 5)
