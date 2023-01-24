@@ -16,6 +16,12 @@
 		DF9577EE297ABCDB00FF6D93 /* GeometryGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9577ED297ABCDB00FF6D93 /* GeometryGetter.swift */; };
 		DF9577F0297ABCF400FF6D93 /* AdaptsToKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9577EF297ABCF400FF6D93 /* AdaptsToKeyboard.swift */; };
 		DF9577F2297ABD1600FF6D93 /* KeyboardHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9577F1297ABD1600FF6D93 /* KeyboardHost.swift */; };
+		DF9ACCF9297FE0E2006C1EED /* EBookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9ACCF8297FE0E2006C1EED /* EBookModel.swift */; };
+		DF9ACCFB297FE982006C1EED /* EBooksData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9ACCFA297FE982006C1EED /* EBooksData.swift */; };
+		DF9ACCFD297FF633006C1EED /* EBookDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9ACCFC297FF633006C1EED /* EBookDetailView.swift */; };
+		DF9ACD00297FF9CB006C1EED /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = DF9ACCFF297FF9CB006C1EED /* URLImage */; };
+		DF9ACD02297FF9CB006C1EED /* URLImageStore in Frameworks */ = {isa = PBXBuildFile; productRef = DF9ACD01297FF9CB006C1EED /* URLImageStore */; };
+		DF9ACD04297FFB79006C1EED /* EbookListItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9ACD03297FFB79006C1EED /* EbookListItemRowView.swift */; };
 		DFA0DA0E297AAEB50021A25A /* StarterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA0DA0D297AAEB50021A25A /* StarterModel.swift */; };
 		DFA0DA10297AAF3B0021A25A /* StartCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA0DA0F297AAF3B0021A25A /* StartCardView.swift */; };
 		DFA0DA12297AAF5E0021A25A /* StartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA0DA11297AAF5E0021A25A /* StartButtonView.swift */; };
@@ -43,6 +49,10 @@
 		DF9577ED297ABCDB00FF6D93 /* GeometryGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryGetter.swift; sourceTree = "<group>"; };
 		DF9577EF297ABCF400FF6D93 /* AdaptsToKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptsToKeyboard.swift; sourceTree = "<group>"; };
 		DF9577F1297ABD1600FF6D93 /* KeyboardHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHost.swift; sourceTree = "<group>"; };
+		DF9ACCF8297FE0E2006C1EED /* EBookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EBookModel.swift; sourceTree = "<group>"; };
+		DF9ACCFA297FE982006C1EED /* EBooksData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EBooksData.swift; sourceTree = "<group>"; };
+		DF9ACCFC297FF633006C1EED /* EBookDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EBookDetailView.swift; sourceTree = "<group>"; };
+		DF9ACD03297FFB79006C1EED /* EbookListItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EbookListItemRowView.swift; sourceTree = "<group>"; };
 		DFA0DA0D297AAEB50021A25A /* StarterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarterModel.swift; sourceTree = "<group>"; };
 		DFA0DA0F297AAF3B0021A25A /* StartCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartCardView.swift; sourceTree = "<group>"; };
 		DFA0DA11297AAF5E0021A25A /* StartButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButtonView.swift; sourceTree = "<group>"; };
@@ -62,6 +72,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF9ACD00297FF9CB006C1EED /* URLImage in Frameworks */,
+				DF9ACD02297FF9CB006C1EED /* URLImageStore in Frameworks */,
 				FEAECC49E6225DC59F98850F /* Pods_Dita.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -110,6 +122,7 @@
 				DF911777297E80E400619900 /* ContactDitaView.swift */,
 				DF911779297E80F200619900 /* LastReadView.swift */,
 				DF91177B297E812200619900 /* SummariesView.swift */,
+				DF9ACCFC297FF633006C1EED /* EBookDetailView.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -119,6 +132,7 @@
 			children = (
 				DFA0DA0F297AAF3B0021A25A /* StartCardView.swift */,
 				DFA0DA11297AAF5E0021A25A /* StartButtonView.swift */,
+				DF9ACD03297FFB79006C1EED /* EbookListItemRowView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -127,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				DFA0DA0D297AAEB50021A25A /* StarterModel.swift */,
+				DF9ACCF8297FE0E2006C1EED /* EBookModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -135,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				DFA0DA16297AB0890021A25A /* StartData.swift */,
+				DF9ACCFA297FE982006C1EED /* EBooksData.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -197,6 +213,10 @@
 			dependencies = (
 			);
 			name = Dita;
+			packageProductDependencies = (
+				DF9ACCFF297FF9CB006C1EED /* URLImage */,
+				DF9ACD01297FF9CB006C1EED /* URLImageStore */,
+			);
 			productName = Dita;
 			productReference = DFE8C537293375C60040D280 /* Dita.app */;
 			productType = "com.apple.product-type.application";
@@ -225,6 +245,9 @@
 				Base,
 			);
 			mainGroup = DFE8C52E293375C60040D280;
+			packageReferences = (
+				DF9ACCFE297FF9CB006C1EED /* XCRemoteSwiftPackageReference "url-image" */,
+			);
 			productRefGroup = DFE8C538293375C60040D280 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -300,7 +323,10 @@
 				DF9577EC297ABCC000FF6D93 /* KeyboardGuardian.swift in Sources */,
 				DF9577F0297ABCF400FF6D93 /* AdaptsToKeyboard.swift in Sources */,
 				DFA0DA1B297AB7310021A25A /* MainView.swift in Sources */,
+				DF9ACD04297FFB79006C1EED /* EbookListItemRowView.swift in Sources */,
 				DFE8C53D293375C60040D280 /* ContentView.swift in Sources */,
+				DF9ACCFD297FF633006C1EED /* EBookDetailView.swift in Sources */,
+				DF9ACCFB297FE982006C1EED /* EBooksData.swift in Sources */,
 				DFA0DA10297AAF3B0021A25A /* StartCardView.swift in Sources */,
 				DFE8C53B293375C60040D280 /* DitaApp.swift in Sources */,
 				DFA0DA14297AB04C0021A25A /* OnboardingView.swift in Sources */,
@@ -308,6 +334,7 @@
 				DF9577EE297ABCDB00FF6D93 /* GeometryGetter.swift in Sources */,
 				DFA0DA12297AAF5E0021A25A /* StartButtonView.swift in Sources */,
 				DF91177A297E80F200619900 /* LastReadView.swift in Sources */,
+				DF9ACCF9297FE0E2006C1EED /* EBookModel.swift in Sources */,
 				DFA0DA19297AB6810021A25A /* LoginView.swift in Sources */,
 				DF9577F2297ABD1600FF6D93 /* KeyboardHost.swift in Sources */,
 				DFA0DA0E297AAEB50021A25A /* StarterModel.swift in Sources */,
@@ -515,6 +542,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DF9ACCFE297FF9CB006C1EED /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
+			requirement = {
+				kind = exactVersion;
+				version = 3.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DF9ACCFF297FF9CB006C1EED /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DF9ACCFE297FF9CB006C1EED /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
+		};
+		DF9ACD01297FF9CB006C1EED /* URLImageStore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DF9ACCFE297FF9CB006C1EED /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImageStore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DFE8C52F293375C60040D280 /* Project object */;
 }

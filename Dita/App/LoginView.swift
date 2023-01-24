@@ -121,7 +121,7 @@ class HttpVerifyLoginCode: ObservableObject {
                     DispatchQueue.main.async {
                         print(status)
                         if status == "success" {
-                            self.requestMade = "2" // started
+                            self.requestMade = "2" // success
                             if let thisaccesstoken = json["access_token"].string {
                                 //Now you got your value
                                 saveTextInStorage("user_accesstoken", thisaccesstoken)

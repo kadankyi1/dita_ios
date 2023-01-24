@@ -137,7 +137,8 @@ struct MainView: View {
                 case 2:
                     SummariesView()
                 case 3:
-                    ContactDitaView()
+                    ContactDitaView(textfield_msg: "Type message here", currentStage: .constant("MainView"))
+                    //ContactDitaView(currentStage: .constant("MainView"), user_access_token: getSavedString("user_firstname"),  user_email:  getSavedString("user_lastname"))
                     
                 default:
                     NavigationView {
