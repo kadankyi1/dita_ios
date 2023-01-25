@@ -16,7 +16,7 @@ struct ContactDitaView: View {
     var textfield_msg: String
     @State private var isAnimatingImage: Bool = false
     @ObservedObject var request_manager_send_request = SendMessageRequestHttpAuth()
-    @State var text: String = "Type here"
+    @State var text: String = "Type here."
     var access_token: String = getSavedString("user_accesstoken");
     @ObservedObject var model: MyModel = MyModel()
     @Binding var currentStage: String
@@ -29,12 +29,13 @@ struct ContactDitaView: View {
             ScrollView(.vertical, showsIndicators: false){
                 VStack(alignment: .center, spacing: 20){
                     // HEADER
-                    ZStack {
+                    /*
+                     ZStack {
                         /*
                          LinearGradient(gradient: Gradient(colors: [Color("ColorPrimaryBlue"), Color("ColorArticleHeraldOfGlory")]), startPoint: .topLeading, endPoint: .bottomTrailing)
                          */
                         
-                        Image("logo")
+                        Image("supporttopic")
                             .resizable()
                             .shadow(radius: 4)
                             .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: 250, idealHeight: 300, maxHeight: 250, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
@@ -46,14 +47,14 @@ struct ContactDitaView: View {
                             isAnimatingImage = true
                         }
                     }
+                     */
                     
                     
                     VStack(alignment: .leading, spacing: 20){
                         
                         // TITLE
-                        GroupBox(label: Text("contact_type").fontWeight(.heavy)){}
+                        GroupBox(label: Text("Tell us if you have any issues or ideas.").fontWeight(.heavy)){}
                         Divider().padding(.vertical, 2)
-                        
                         // DESCRIPTION
                         ZStack {
                             TextEditor(text: $text)
@@ -70,14 +71,14 @@ struct ContactDitaView: View {
                             }) {
                                 HStack (spacing: 8) {
                                     Text("SEND")
-                                        .foregroundColor(Color("ColorAccentOppBlack"))
+                                        .foregroundColor(Color("ColorAccentWhite"))
                                 }
                                 .padding(.horizontal, 50)
                                 .padding(.vertical, 10)
                                 .foregroundColor(Color("ColorYellowButton"))
                             } //: BUTTON
-                            .accentColor(Color("ColorYellowButton"))
-                            .background(Color("ColorYellowButton"))
+                            .accentColor(Color("ColorDarkBlueAndDarkBlue"))
+                            .background(Color("ColorDarkBlueAndDarkBlue"))
                             .cornerRadius(20)
                             .padding(.bottom, 50)
                             .frame(maxWidth: .infinity, alignment: .center)
@@ -130,7 +131,7 @@ class SendMessageRequestHttpAuth: ObservableObject {
         
     func sendMessage(user_accesstoken: String, message_text: String) {
         self.showButton = false
-        guard let url = URL(string: "https://thegloryhub.fishpott.com/api/v1/admin/messages/add") else { return }
+        guard let url = URL(string: DitaApp.app_domain + "/api/v1/user/send-message") else { return }
 
         let body: [String: String] = ["message_text": message_text]
 
