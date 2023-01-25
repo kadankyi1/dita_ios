@@ -26,9 +26,9 @@ struct DitaApp: App {
                 OnboardingView(currentStage: $currentStage)
             } else if(self.currentStage == "GetLoginCodeView"){
                 GetLoginCodeView(currentStage: $currentStage)
-            }  else if(self.currentStage == "LoginView"){
+            } else if(self.currentStage == "LoginView"){
                 LoginView(currentStage: $currentStage)
-            }  else {
+            } else {
                 MainView(currentStage: $currentStage)
             }
             

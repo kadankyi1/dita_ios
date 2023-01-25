@@ -32,6 +32,7 @@ struct EBookDetailView: View {
                                      })
                         }
                         .frame(height: 300)
+                        .padding(.top, 20)
                         .onAppear(){
                             withAnimation(.easeOut(duration: 0.5)){
                                 isAnimatingImage = true
@@ -49,12 +50,22 @@ struct EBookDetailView: View {
                                 .padding(.top, 50)
                             
                             // DATE
-                            Text(ebook.book_author)
-                                .font(.footnote)
+                            HStack{
+                                Text("By: " + ebook.book_author)
+                                    .font(.footnote)
+                                Spacer()
+                                Text(ebook.book_cost)
+                                    .font(.title)
+                                    .fontWeight(.heavy)
+                                    .foregroundColor(Color("ColorAccentOppBlack"))
+                                    .lineLimit(2)
+                            }
                             
                             // DESCRIPTION
                             Text(ebook.book_description_long)
                                 .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
+                            
+                            EBookDetailsActionButtonView(purchased: ebook.book_full_purchased, ebook_name: ebook.book_title, ebook_pdf_url: ebook.book_pdf)
                             
                         } //: VSTACK
                         .padding(.horizontal, 20)

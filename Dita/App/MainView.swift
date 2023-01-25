@@ -55,7 +55,7 @@ struct MainView: View {
         Text("Dita ")
             .foregroundColor(Color(.black))
             .font(.custom("SweetSensationsPersonalUse", size: 30))
-            .padding(.top, 5)
+            //.padding(.top, 5)
             
             ZStack {
                 
@@ -69,7 +69,8 @@ struct MainView: View {
                 
                 switch selectedIndex {
                 case 0:
-                    LastReadView()
+                    //LastReadView()
+                    DocumentView(pdfName: "PDF Name", pdfUrlString: "https://www.africau.edu/images/default/sample.pdf")
                     /*
                     if (notificationManager.currentNotificationText == nil || notificationManager.currentNotificationText == "") {
                         SuggestionView()
