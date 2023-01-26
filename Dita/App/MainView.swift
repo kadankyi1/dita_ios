@@ -69,8 +69,8 @@ struct MainView: View {
                 
                 switch selectedIndex {
                 case 0:
-                    //LastReadView()
-                    DocumentView(pdfName: "PDF Name", pdfUrlString: "https://www.africau.edu/images/default/sample.pdf")
+                    LastReadView()
+                    //DocumentView(pdfName: "PDF Name", pdfUrlString: "https://www.africau.edu/images/default/sample.pdf")
                     /*
                     if (notificationManager.currentNotificationText == nil || notificationManager.currentNotificationText == "") {
                         SuggestionView()
@@ -140,7 +140,6 @@ struct MainView: View {
                 case 3:
                     ContactDitaView(textfield_msg: "Type message here", currentStage: .constant("MainView"))
                     //ContactDitaView(currentStage: .constant("MainView"), user_access_token: getSavedString("user_firstname"),  user_email:  getSavedString("user_lastname"))
-                    
                 default:
                     NavigationView {
                         Text("Remaining tabs")

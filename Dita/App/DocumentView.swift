@@ -37,6 +37,9 @@ struct DocumentView: View, DownloadManagerDelegate {
                     Button("Start Reading"){
                         if self.fileExistsInDirectory() {
                             self.viewRemotePDF = true
+                            
+                            saveTextInStorage("last_read_pdf_url", self.pdfUrlString)
+                            saveTextInStorage("last_read_pdf_name", self.pdfName)
                         } else {
                             self.downloadPDF(pdfUrlString: self.pdfUrlString)
                         }

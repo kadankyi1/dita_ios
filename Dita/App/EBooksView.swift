@@ -45,7 +45,7 @@ struct EBooksView: View {
                         }
                     }
                 }
-            .navigationTitle("Messages")
+            .navigationTitle("Listing")
         }
         .searchable(text: $searchText)
         .onAppear(perform: runSearch)
