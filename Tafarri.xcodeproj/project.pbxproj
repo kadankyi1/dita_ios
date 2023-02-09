@@ -1,0 +1,553 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DF4325032991244100266CD2 /* TafarriApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4325022991244100266CD2 /* TafarriApp.swift */; };
+		DF4325052991244100266CD2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4325042991244100266CD2 /* ContentView.swift */; };
+		DF4325072991244200266CD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF4325062991244200266CD2 /* Assets.xcassets */; };
+		DF43250A2991244200266CD2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF4325092991244200266CD2 /* Preview Assets.xcassets */; };
+		DF4325202991261600266CD2 /* EBookDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4325152991261500266CD2 /* EBookDetailView.swift */; };
+		DF4325212991261600266CD2 /* DocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4325162991261600266CD2 /* DocumentView.swift */; };
+		DF4325222991261600266CD2 /* EBooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4325172991261600266CD2 /* EBooksView.swift */; };
+		DF4325232991261600266CD2 /* LastReadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4325182991261600266CD2 /* LastReadView.swift */; };
+		DF4325242991261600266CD2 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4325192991261600266CD2 /* OnboardingView.swift */; };
+		DF4325252991261600266CD2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43251A2991261600266CD2 /* MainView.swift */; };
+		DF4325262991261600266CD2 /* GetLoginCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43251B2991261600266CD2 /* GetLoginCodeView.swift */; };
+		DF4325282991261600266CD2 /* ContactDitaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43251D2991261600266CD2 /* ContactDitaView.swift */; };
+		DF4325292991261600266CD2 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43251E2991261600266CD2 /* LoginView.swift */; };
+		DF43252A2991261600266CD2 /* SummariesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43251F2991261600266CD2 /* SummariesView.swift */; };
+		DF43252F2991263500266CD2 /* EBookDetailsActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43252B2991263500266CD2 /* EBookDetailsActionButtonView.swift */; };
+		DF4325302991263500266CD2 /* EbookListItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43252C2991263500266CD2 /* EbookListItemRowView.swift */; };
+		DF4325312991263500266CD2 /* StartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43252D2991263500266CD2 /* StartButtonView.swift */; };
+		DF4325322991263500266CD2 /* StartCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43252E2991263500266CD2 /* StartCardView.swift */; };
+		DF4325352991265300266CD2 /* StarterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4325332991265300266CD2 /* StarterModel.swift */; };
+		DF4325362991265300266CD2 /* EBookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4325342991265300266CD2 /* EBookModel.swift */; };
+		DF4325392991266A00266CD2 /* EBooksData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4325372991266A00266CD2 /* EBooksData.swift */; };
+		DF43253A2991266A00266CD2 /* StartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4325382991266A00266CD2 /* StartData.swift */; };
+		DF43253F2991268100266CD2 /* AdaptsToKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43253B2991268100266CD2 /* AdaptsToKeyboard.swift */; };
+		DF4325402991268100266CD2 /* KeyboardGuardian.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43253C2991268100266CD2 /* KeyboardGuardian.swift */; };
+		DF4325412991268100266CD2 /* GeometryGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43253D2991268100266CD2 /* GeometryGetter.swift */; };
+		DF4325422991268100266CD2 /* KeyboardHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43253E2991268100266CD2 /* KeyboardHost.swift */; };
+		DF432545299126CA00266CD2 /* PDFViewer in Frameworks */ = {isa = PBXBuildFile; productRef = DF432544299126CA00266CD2 /* PDFViewer */; };
+		DF4325482991273500266CD2 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = DF4325472991273500266CD2 /* URLImage */; };
+		DF43254B29912A2400266CD2 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = DF43254A29912A2400266CD2 /* SwiftyJSON */; };
+		DFD1DE47299225EB006132DD /* awalr.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DFD1DE46299225EB006132DD /* awalr.ttf */; };
+		DFD1DE4C29927540006132DD /* SummaryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD1DE4B29927540006132DD /* SummaryDetailView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		DF4324FF2991244100266CD2 /* Tafarri.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tafarri.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF4325022991244100266CD2 /* TafarriApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TafarriApp.swift; sourceTree = "<group>"; };
+		DF4325042991244100266CD2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DF4325062991244200266CD2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DF4325092991244200266CD2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DF4325152991261500266CD2 /* EBookDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EBookDetailView.swift; sourceTree = "<group>"; };
+		DF4325162991261600266CD2 /* DocumentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentView.swift; sourceTree = "<group>"; };
+		DF4325172991261600266CD2 /* EBooksView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EBooksView.swift; sourceTree = "<group>"; };
+		DF4325182991261600266CD2 /* LastReadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastReadView.swift; sourceTree = "<group>"; };
+		DF4325192991261600266CD2 /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		DF43251A2991261600266CD2 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		DF43251B2991261600266CD2 /* GetLoginCodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetLoginCodeView.swift; sourceTree = "<group>"; };
+		DF43251D2991261600266CD2 /* ContactDitaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDitaView.swift; sourceTree = "<group>"; };
+		DF43251E2991261600266CD2 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		DF43251F2991261600266CD2 /* SummariesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummariesView.swift; sourceTree = "<group>"; };
+		DF43252B2991263500266CD2 /* EBookDetailsActionButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EBookDetailsActionButtonView.swift; sourceTree = "<group>"; };
+		DF43252C2991263500266CD2 /* EbookListItemRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EbookListItemRowView.swift; sourceTree = "<group>"; };
+		DF43252D2991263500266CD2 /* StartButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartButtonView.swift; sourceTree = "<group>"; };
+		DF43252E2991263500266CD2 /* StartCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartCardView.swift; sourceTree = "<group>"; };
+		DF4325332991265300266CD2 /* StarterModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarterModel.swift; sourceTree = "<group>"; };
+		DF4325342991265300266CD2 /* EBookModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EBookModel.swift; sourceTree = "<group>"; };
+		DF4325372991266A00266CD2 /* EBooksData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EBooksData.swift; sourceTree = "<group>"; };
+		DF4325382991266A00266CD2 /* StartData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartData.swift; sourceTree = "<group>"; };
+		DF43253B2991268100266CD2 /* AdaptsToKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdaptsToKeyboard.swift; sourceTree = "<group>"; };
+		DF43253C2991268100266CD2 /* KeyboardGuardian.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardGuardian.swift; sourceTree = "<group>"; };
+		DF43253D2991268100266CD2 /* GeometryGetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeometryGetter.swift; sourceTree = "<group>"; };
+		DF43253E2991268100266CD2 /* KeyboardHost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardHost.swift; sourceTree = "<group>"; };
+		DFD1DE46299225EB006132DD /* awalr.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = awalr.ttf; sourceTree = "<group>"; };
+		DFD1DE4829922A49006132DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		DFD1DE4B29927540006132DD /* SummaryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryDetailView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DF4324FC2991244100266CD2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF43254B29912A2400266CD2 /* SwiftyJSON in Frameworks */,
+				DF4325482991273500266CD2 /* URLImage in Frameworks */,
+				DF432545299126CA00266CD2 /* PDFViewer in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DF4324F62991244100266CD2 = {
+			isa = PBXGroup;
+			children = (
+				DF4325012991244100266CD2 /* Tafarri */,
+				DF4325002991244100266CD2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DF4325002991244100266CD2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DF4324FF2991244100266CD2 /* Tafarri.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DF4325012991244100266CD2 /* Tafarri */ = {
+			isa = PBXGroup;
+			children = (
+				DFD1DE4829922A49006132DD /* Info.plist */,
+				DFD1DE45299225C8006132DD /* Fonts */,
+				DF432511299124AB00266CD2 /* Utils */,
+				DF432512299124B500266CD2 /* Data */,
+				DF432513299124C500266CD2 /* Model */,
+				DF432514299124CE00266CD2 /* View */,
+				DF432510299124A200266CD2 /* App */,
+				DF4325062991244200266CD2 /* Assets.xcassets */,
+				DF4325082991244200266CD2 /* Preview Content */,
+			);
+			path = Tafarri;
+			sourceTree = "<group>";
+		};
+		DF4325082991244200266CD2 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				DF4325092991244200266CD2 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DF432510299124A200266CD2 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				DF43251D2991261600266CD2 /* ContactDitaView.swift */,
+				DF4325162991261600266CD2 /* DocumentView.swift */,
+				DF4325152991261500266CD2 /* EBookDetailView.swift */,
+				DF4325172991261600266CD2 /* EBooksView.swift */,
+				DF43251B2991261600266CD2 /* GetLoginCodeView.swift */,
+				DF4325182991261600266CD2 /* LastReadView.swift */,
+				DF43251E2991261600266CD2 /* LoginView.swift */,
+				DF43251A2991261600266CD2 /* MainView.swift */,
+				DF4325192991261600266CD2 /* OnboardingView.swift */,
+				DF43251F2991261600266CD2 /* SummariesView.swift */,
+				DF4325022991244100266CD2 /* TafarriApp.swift */,
+				DF4325042991244100266CD2 /* ContentView.swift */,
+				DFD1DE4B29927540006132DD /* SummaryDetailView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		DF432511299124AB00266CD2 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				DF43253B2991268100266CD2 /* AdaptsToKeyboard.swift */,
+				DF43253D2991268100266CD2 /* GeometryGetter.swift */,
+				DF43253C2991268100266CD2 /* KeyboardGuardian.swift */,
+				DF43253E2991268100266CD2 /* KeyboardHost.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		DF432512299124B500266CD2 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				DF4325372991266A00266CD2 /* EBooksData.swift */,
+				DF4325382991266A00266CD2 /* StartData.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		DF432513299124C500266CD2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DF4325342991265300266CD2 /* EBookModel.swift */,
+				DF4325332991265300266CD2 /* StarterModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DF432514299124CE00266CD2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DF43252B2991263500266CD2 /* EBookDetailsActionButtonView.swift */,
+				DF43252C2991263500266CD2 /* EbookListItemRowView.swift */,
+				DF43252D2991263500266CD2 /* StartButtonView.swift */,
+				DF43252E2991263500266CD2 /* StartCardView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DFD1DE45299225C8006132DD /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				DFD1DE46299225EB006132DD /* awalr.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DF4324FE2991244100266CD2 /* Tafarri */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DF43250D2991244200266CD2 /* Build configuration list for PBXNativeTarget "Tafarri" */;
+			buildPhases = (
+				DF4324FB2991244100266CD2 /* Sources */,
+				DF4324FC2991244100266CD2 /* Frameworks */,
+				DF4324FD2991244100266CD2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Tafarri;
+			packageProductDependencies = (
+				DF432544299126CA00266CD2 /* PDFViewer */,
+				DF4325472991273500266CD2 /* URLImage */,
+				DF43254A29912A2400266CD2 /* SwiftyJSON */,
+			);
+			productName = Tafarri;
+			productReference = DF4324FF2991244100266CD2 /* Tafarri.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DF4324F72991244100266CD2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					DF4324FE2991244100266CD2 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+				};
+			};
+			buildConfigurationList = DF4324FA2991244100266CD2 /* Build configuration list for PBXProject "Tafarri" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DF4324F62991244100266CD2;
+			packageReferences = (
+				DF432543299126CA00266CD2 /* XCRemoteSwiftPackageReference "PDFViewer" */,
+				DF4325462991273500266CD2 /* XCRemoteSwiftPackageReference "url-image" */,
+				DF43254929912A2400266CD2 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+			);
+			productRefGroup = DF4325002991244100266CD2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DF4324FE2991244100266CD2 /* Tafarri */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DF4324FD2991244100266CD2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF43250A2991244200266CD2 /* Preview Assets.xcassets in Resources */,
+				DFD1DE47299225EB006132DD /* awalr.ttf in Resources */,
+				DF4325072991244200266CD2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DF4324FB2991244100266CD2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF4325222991261600266CD2 /* EBooksView.swift in Sources */,
+				DF4325252991261600266CD2 /* MainView.swift in Sources */,
+				DF4325052991244100266CD2 /* ContentView.swift in Sources */,
+				DF4325282991261600266CD2 /* ContactDitaView.swift in Sources */,
+				DF4325422991268100266CD2 /* KeyboardHost.swift in Sources */,
+				DF4325232991261600266CD2 /* LastReadView.swift in Sources */,
+				DFD1DE4C29927540006132DD /* SummaryDetailView.swift in Sources */,
+				DF4325312991263500266CD2 /* StartButtonView.swift in Sources */,
+				DF43252A2991261600266CD2 /* SummariesView.swift in Sources */,
+				DF43252F2991263500266CD2 /* EBookDetailsActionButtonView.swift in Sources */,
+				DF43253F2991268100266CD2 /* AdaptsToKeyboard.swift in Sources */,
+				DF4325392991266A00266CD2 /* EBooksData.swift in Sources */,
+				DF4325322991263500266CD2 /* StartCardView.swift in Sources */,
+				DF4325402991268100266CD2 /* KeyboardGuardian.swift in Sources */,
+				DF4325032991244100266CD2 /* TafarriApp.swift in Sources */,
+				DF4325292991261600266CD2 /* LoginView.swift in Sources */,
+				DF4325412991268100266CD2 /* GeometryGetter.swift in Sources */,
+				DF4325202991261600266CD2 /* EBookDetailView.swift in Sources */,
+				DF4325262991261600266CD2 /* GetLoginCodeView.swift in Sources */,
+				DF43253A2991266A00266CD2 /* StartData.swift in Sources */,
+				DF4325212991261600266CD2 /* DocumentView.swift in Sources */,
+				DF4325362991265300266CD2 /* EBookModel.swift in Sources */,
+				DF4325242991261600266CD2 /* OnboardingView.swift in Sources */,
+				DF4325302991263500266CD2 /* EbookListItemRowView.swift in Sources */,
+				DF4325352991265300266CD2 /* StarterModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		DF43250B2991244200266CD2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DF43250C2991244200266CD2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DF43250E2991244200266CD2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_ASSET_PATHS = "\"Tafarri/Preview Content\"";
+				DEVELOPMENT_TEAM = AD23W3PT6L;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Tafarri/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.01;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tafarri.tafarrireader;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DF43250F2991244200266CD2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_ASSET_PATHS = "\"Tafarri/Preview Content\"";
+				DEVELOPMENT_TEAM = AD23W3PT6L;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Tafarri/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.01;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tafarri.tafarrireader;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DF4324FA2991244100266CD2 /* Build configuration list for PBXProject "Tafarri" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF43250B2991244200266CD2 /* Debug */,
+				DF43250C2991244200266CD2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DF43250D2991244200266CD2 /* Build configuration list for PBXNativeTarget "Tafarri" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF43250E2991244200266CD2 /* Debug */,
+				DF43250F2991244200266CD2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DF432543299126CA00266CD2 /* XCRemoteSwiftPackageReference "PDFViewer" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rajubd49/PDFViewer.git";
+			requirement = {
+				kind = exactVersion;
+				version = 1.0.2;
+			};
+		};
+		DF4325462991273500266CD2 /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
+			requirement = {
+				kind = exactVersion;
+				version = 3.1.1;
+			};
+		};
+		DF43254929912A2400266CD2 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = exactVersion;
+				version = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DF432544299126CA00266CD2 /* PDFViewer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DF432543299126CA00266CD2 /* XCRemoteSwiftPackageReference "PDFViewer" */;
+			productName = PDFViewer;
+		};
+		DF4325472991273500266CD2 /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DF4325462991273500266CD2 /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
+		};
+		DF43254A29912A2400266CD2 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DF43254929912A2400266CD2 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = DF4324F72991244100266CD2 /* Project object */;
+}

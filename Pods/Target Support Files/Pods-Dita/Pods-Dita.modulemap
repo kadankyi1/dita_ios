@@ -1,6 +1,0 @@
-framework module Pods_Dita {
-  umbrella header "Pods-Dita-umbrella.h"
-
-  export *
-  module * { export * }
-}
