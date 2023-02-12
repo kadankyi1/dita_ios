@@ -15,11 +15,12 @@ struct EBookDetailsActionButtonView: View {
     var ebook_pdf_url: String
     var ebook_ref: String
     var read_text: String
+    var ebook_price: String
     @ObservedObject var payment_fullebook_http_manager = HttpTakePayment()
     
     var body: some View {
         
-        if purchased == "yes" {
+        if purchased == "yes" || ebook_price == "Free" {
             
             NavigationLink(destination: DocumentView(pdfName: ebook_name, pdfUrlString: ebook_pdf_url)){
                 
@@ -54,7 +55,7 @@ struct EBookDetailsActionButtonView: View {
 
 struct EBookDetailsActionButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        EBookDetailsActionButtonView(purchased: "yes", ebook_name: "ebook.book_title", ebook_pdf_url: "https://www.africau.edu/images/default/sample.pdf", ebook_ref: "SYS-ID-1", read_text: "READ BOOK")
+        EBookDetailsActionButtonView(purchased: "yes", ebook_name: "ebook.book_title", ebook_pdf_url: "https://www.africau.edu/images/default/sample.pdf", ebook_ref: "SYS-ID-1", read_text: "READ BOOK", ebook_price: "$5")
     }
 }
 

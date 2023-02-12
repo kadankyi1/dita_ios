@@ -74,10 +74,10 @@ struct SummaryDetailView: View {
                                 .font(.headline)
                                 .fontWeight(.bold)
                         
-                            EBookDetailsActionButtonView(purchased: ebook.book_full_purchased, ebook_name: ebook.book_title, ebook_pdf_url: ebook.book_pdf, ebook_ref: ebook.book_sys_id, read_text: "READ FULL BOOK")
+                            EBookDetailsActionButtonView(purchased: ebook.book_full_purchased, ebook_name: ebook.book_title, ebook_pdf_url: ebook.book_pdf, ebook_ref: ebook.book_sys_id, read_text: "READ FULL BOOK", ebook_price: ebook.book_cost)
                             
                         
-                            EBookDetailsActionButtonView(purchased: ebook.book_summary_purchased, ebook_name: ebook.book_title, ebook_pdf_url: ebook.book_summary_pdf, ebook_ref: ebook.book_sys_id, read_text: "READ SUMMARY")
+                            EBookDetailsActionButtonView(purchased: ebook.book_summary_purchased, ebook_name: ebook.book_title, ebook_pdf_url: ebook.book_summary_pdf, ebook_ref: ebook.book_sys_id, read_text: "READ SUMMARY", ebook_price: ebook.book_summary_cost)
                             
                             // DESCRIPTION
                             Text(ebook.book_description_long)
